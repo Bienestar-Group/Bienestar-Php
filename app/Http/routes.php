@@ -43,3 +43,16 @@ Route::post('curso/search',['as' => 'curso/search', 'uses'=>'CursoController@sea
 Route::resource('taller','TallerController');
 Route::get('taller/destroy/{id}',['as' => 'taller/destroy','uses'=>'TallerController@destroy']);
 Route::post('taller/search',['as' => 'taller/search', 'uses'=>'TallerController@search']);	
+
+Route::resource ('area','AreaController');
+Route::get('area/destroy/{id}',['as'=>'area/destroy', 'uses'=>'AreaController@destroy']);
+Route::post('area/search',['as'=>'area/search','uses'=>'AreaController@search']);
+
+Route::resource ('profesional','ProfesionalController');
+Route::get('profesional/destroy/{id}',['as'=>'profesional/destroy', 'uses'=>'ProfesionalController@destroy']);
+Route::post('profesional/search',['as'=>'profesional/search','uses'=>'ProfesionalController@search']);
+
+
+Route::resource ('problematica','ProblematicaController');
+Route::get('problematica/destroy/{ID_PROFESIONAL}',['as'=>'problematica/destroy', 'uses'=>'ProblematicaController@destroy']);
+Route::post('problematica/search',['as'=>'problematica/search','uses'=>'ProblematicaController@search']);
