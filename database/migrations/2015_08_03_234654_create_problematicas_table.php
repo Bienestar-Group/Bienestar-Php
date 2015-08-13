@@ -18,7 +18,8 @@ class CreateProblematicasTable extends Migration {
 			$table->string('nombre_problematica');
 			$table->string('tipo_problematica');
 			$table->char('estado_problematica');
-			$table->biginteger('area');
+			$table->integer('area')->unsigned();
+			$table->foreign('area')->references('id')->on('area')->onUpdate('cascade');
 			$table->timestamps();
 		});
 	}

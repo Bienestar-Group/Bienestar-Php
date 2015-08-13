@@ -54,5 +54,9 @@ Route::post('profesional/search',['as'=>'profesional/search','uses'=>'Profesiona
 
 
 Route::resource ('problematica','ProblematicaController');
-Route::get('problematica/destroy/{ID_PROFESIONAL}',['as'=>'problematica/destroy', 'uses'=>'ProblematicaController@destroy']);
+Route::get('problematica/destroy/{id}',['as'=>'problematica/destroy', 'uses'=>'ProblematicaController@destroy']);
 Route::post('problematica/search',['as'=>'problematica/search','uses'=>'ProblematicaController@search']);
+
+Route::resource ('seguimiento','SeguimientoController');
+Route::get('seguimiento/destroy/{id}',['as'=>'seguimiento/destroy', 'uses'=>'SeguimientoController@destroy']);
+Route::post('seguimiento/search',['as'=>'seguimiento/search','uses'=>'SeguimientoController@search']);

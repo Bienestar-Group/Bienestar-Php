@@ -18,7 +18,7 @@
 		</div>
 		<div class="form-group">
 			{!! Form::label('email','Area')!!}
-			{!! Form::text('area',null,['class'=>'form-control','required'=>'required'])!!}
+			{!! Form::select('area', $area, null ,['class' => 'form-control']) !!}
 		</div>
 		<div class="form-group">
 			{!! Form::submit('Enviar',['class'=>'btn btn-success'])!!}

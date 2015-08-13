@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Models\Problematica as Problematica;
+use App\Models\Area as Area;
 
 class ProblematicaController extends Controller {
 
@@ -25,8 +26,9 @@ class ProblematicaController extends Controller {
 	 * @return Response
 	 */
 	public function create()
-	{
-		return \View::make ('Problematica/new_problematica');
+	{	
+		$area = ['area' => Area::lists('nombre_area','id')];
+		return \View::make ('Problematica/new_problematica',$area);
 	}
 
 	/**
@@ -43,6 +45,7 @@ class ProblematicaController extends Controller {
 		$problematica->problematica=$request->problematica;
 		$problematica->save();
 		return redirect('problematica');
+	}
 
 	/**
 	 * Display the specified resource.
@@ -50,6 +53,7 @@ class ProblematicaController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
+
 	public function show($id)
 	{
 		//
